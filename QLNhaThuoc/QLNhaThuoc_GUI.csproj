@@ -36,6 +36,7 @@
     <Reference Include="DevExpress.Data.Desktop.v21.2" />
     <Reference Include="DevExpress.Data.v21.2" />
     <Reference Include="DevExpress.Images.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.TreeMap.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v21.2" />
     <Reference Include="DevExpress.Sparkline.v21.2.Core" />
@@ -45,9 +46,11 @@
     <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeMap.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeMap.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -61,14 +64,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Button_WOC.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="CustomersForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomersForm.Designer.cs">
       <DependentUpon>CustomersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomersForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomersForm1.Designer.cs">
+      <DependentUpon>CustomersForm1.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -89,9 +95,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLNhaThuocDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="RJButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +103,9 @@
     </Compile>
     <EmbeddedResource Include="CustomersForm.resx">
       <DependentUpon>CustomersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomersForm1.resx">
+      <DependentUpon>CustomersForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -145,6 +151,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\BQfrOF.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8666595_x_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8666595_x_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QLNhaThuoc_BUS\QLNhaThuoc_BUS.csproj">
+      <Project>{e732a3b9-0131-4175-95d2-4631456b0057}</Project>
+      <Name>QLNhaThuoc_BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QLNhaThuoc_DTO\QLNhaThuoc_DTO.csproj">
+      <Project>{0f530efb-3d11-4abe-b12c-1805e0d1aeb7}</Project>
+      <Name>QLNhaThuoc_DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

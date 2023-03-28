@@ -19,7 +19,7 @@ namespace QLNhaThuoc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CustomersForm());
+            Application.Run(new Login());
         }
     }
 

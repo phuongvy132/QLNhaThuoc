@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLNhaThuoc", "QLNhaThuoc\QLNhaThuoc.csproj", "{A7A5669B-32CD-4570-A349-D32E5D0BD94B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLNhaThuoc_GUI", "QLNhaThuoc\QLNhaThuoc_GUI.csproj", "{A7A5669B-32CD-4570-A349-D32E5D0BD94B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLNhaThuoc_BUS", "QLNhaThuoc_BUS\QLNhaThuoc_BUS.csproj", "{E732A3B9-0131-4175-95D2-4631456B0057}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLNhaThuoc_DAL", "QLNhaThuoc_DAL\QLNhaThuoc_DAL.csproj", "{FFA4433F-70C9-4515-8203-F01FEA2C9F61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLNhaThuoc_DTO", "QLNhaThuoc_DTO\QLNhaThuoc_DTO.csproj", "{0F530EFB-3D11-4ABE-B12C-1805E0D1AEB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +21,23 @@ Global
 		{A7A5669B-32CD-4570-A349-D32E5D0BD94B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7A5669B-32CD-4570-A349-D32E5D0BD94B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7A5669B-32CD-4570-A349-D32E5D0BD94B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E732A3B9-0131-4175-95D2-4631456B0057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E732A3B9-0131-4175-95D2-4631456B0057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E732A3B9-0131-4175-95D2-4631456B0057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E732A3B9-0131-4175-95D2-4631456B0057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA4433F-70C9-4515-8203-F01FEA2C9F61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA4433F-70C9-4515-8203-F01FEA2C9F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA4433F-70C9-4515-8203-F01FEA2C9F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA4433F-70C9-4515-8203-F01FEA2C9F61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F530EFB-3D11-4ABE-B12C-1805E0D1AEB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F530EFB-3D11-4ABE-B12C-1805E0D1AEB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F530EFB-3D11-4ABE-B12C-1805E0D1AEB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F530EFB-3D11-4ABE-B12C-1805E0D1AEB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC89EBAB-7366-44E9-8155-4C7B04A5AD56}
 	EndGlobalSection
 EndGlobal

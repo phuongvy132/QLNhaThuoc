@@ -1,10 +1,14 @@
-﻿using DevExpress.XtraBars;
+﻿//using AutoFilterNonUnicode;
+using DevExpress.Utils.Paint;
+using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,14 +22,14 @@ namespace QLNhaThuoc
         public CustomersForm()
         {
             InitializeComponent();
-            gridControl.DataSource = GetDataSource();
+            gridviewKH.DataSource = GetDataSource();
             BindingList<Customer> dataSource = GetDataSource();
-            gridControl.DataSource = dataSource;
+            gridviewKH.DataSource = dataSource;
             bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
         {
-            gridControl.ShowRibbonPrintPreview();
+            gridviewKH.ShowRibbonPrintPreview();
         }
         public BindingList<Customer> GetDataSource()
         {
@@ -72,5 +76,53 @@ namespace QLNhaThuoc
             this.khachHangTableAdapter.Fill(this.qLNhaThuocDataSet.KhachHang);
 
         }
+
+        private void btnThemKH_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //btnSuaKH.Enabled = false;
+            //btnXoa.Enabled = false;
+            //btnLuu.Enabled = true;
+            //btnThemKH.Enabled = false;
+            //ResetValues();
+            //txtMaKhach.Enabled = true;
+            //txtMaKhach.Focus();
+        }
+
+        private void txtSearch_ButtonPressed(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+                txtSearch.Text = String.Empty;
+        }
+
+        private void btnSearch_ItemPress(object sender, ItemClickEventArgs e)
+        {
+            txtSearch.Text += String.Empty;
+        }
+
+        //private void gridviewKH_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        //{
+        //    MyGridView view = (MyGridView)sender;
+        //    if (!view.OptionsView.ShowAutoFilterRow || !view.IsDataRow(e.RowHandle))
+        //        return;
+
+        //    string filterCellText = view.GetRowCellDisplayText(GridControl.AutoFilterRowHandle, e.Column);
+
+
+
+        //    if (String.IsNullOrEmpty(filterCellText))
+        //        return;
+
+        //    string temp = MyGridView.RemoveDiacritics(e.DisplayText, true);
+        //    int filterTextIndex = temp.IndexOf(filterCellText, StringComparison.CurrentCultureIgnoreCase);
+        //    if (filterTextIndex == -1)
+        //        return;
+
+        //    XPaint.Graphics.DrawMultiColorString(e.Cache, e.Bounds, e.DisplayText, filterCellText, e.Appearance, Color.Black, Color.Gold, false, filterTextIndex);
+        //    e.Handled = true;
+        //}
+
+        //private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    OleDbConnection con = new OleDbConnection("");
+        //}
     }
 }

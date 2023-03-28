@@ -8,11 +8,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using QLNhaThuoc_DTO;
+using QLNhaThuoc_BUS;
 
 namespace QLNhaThuoc
 {
-    public partial class Login : DevExpress.XtraEditors.XtraForm
+    public partial class Login : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
+        Login_DTO login = new Login_DTO();
+        Login_BUS loginBUS = new Login_BUS();
+
         public Login()
         {
             InitializeComponent();
@@ -41,81 +46,105 @@ namespace QLNhaThuoc
             }
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-QQPQ8EC;Initial Catalog=QLNhaThuoc;Integrated Security=True");
         private void btnĐN_Click_1(object sender, EventArgs e)
         {
-            String username, user_password;
+            login.username = txtMa.Text;
+            login.password = txtMK.Text;
 
-            username = txtMa.Text;
-            user_password = txtMK.Text;
+            string getuser = loginBUS.CheckLogin(login);
 
-            try
+            //Trả kết quả nếu nghiệp vụ không đúng
+            switch (getuser)
             {
-                String querry = "SELECT * FROM Login WHERE username = '" + txtMa.Text + "' AND password = '" + txtMK.Text + "'";
-                SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+                case "Required_username":
+                    MessageBox.Show("Cần điền username!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
 
-                DataTable dtable = new DataTable();
-                sda.Fill(dtable);
+                case "Required_password":
+                    MessageBox.Show("Cần điền password!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
 
-                if (dtable.Rows.Count > 0)
-                {
-                    username = txtMa.Text;
-                    user_password = txtMK.Text;
-
-                    //chuyển sang page tiếp theo
-                    MenuForm form2 = new MenuForm();
-                    form2.ShowDialog();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid login details!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                case "Tài khoản hoặc mật khẩu không chính xác!":
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtMa.Clear();
                     txtMK.Text = string.Empty;
                     txtMa.Focus();
-                }
+                    return;
+            }
+            MessageBox.Show("Đăng nhập thành công!", "Thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MenuForm form2 = new MenuForm();
+            form2.ShowDialog();
+            this.Close();
 
-            }
-            catch
-            {
-                MessageBox.Show("Error");
-            }
-            finally
-            {
-                conn.Close();
-                //MenuForm frm = new MenuForm();
-                //frm.Show();
-                //this.Close();
-            }
+
+            //    try
+            //    {
+            //        String querry = "SELECT * FROM Login WHERE username = '" + txtMa.Text + "' AND password = '" + txtMK.Text + "'";
+            //        SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+
+            //        DataTable dtable = new DataTable();
+            //        sda.Fill(dtable);
+
+            //        if (dtable.Rows.Count > 0)
+            //        {
+            //            username = txtMa.Text;
+            //            user_password = txtMK.Text;
+
+            //            //chuyển sang page tiếp theo
+            //            MenuForm form2 = new MenuForm();
+            //            form2.ShowDialog();
+            //            this.Close();
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Invalid login details!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //            txtMa.Clear();
+            //            txtMK.Text = string.Empty;
+            //            txtMa.Focus();
+            //        }
+
+            //    }
+            //    catch
+            //    {
+            //        MessageBox.Show("Error");
+            //    }
+            //    finally
+            //    {
+            //        conn.Close();
+            //        //MenuForm frm = new MenuForm();
+            //        //frm.Show();
+            //        //this.Close();
+            //    }
+            //}
+
+            //Exit button
+            //public void exit()
+            //{
+            //    DialogResult res;
+            //    res = MessageBox.Show("Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            //    if (res == DialogResult.Yes)
+            //    {
+            //        Application.Exit();
+            //    }
+            //    else
+            //    {
+            //        this.Show();
+            //    }
+
+            //}
+
+            //private void dangnhap_Click()
+            //{
+            //    //if (txtMa.Text.Length == 0 && txtMK.Text.Length == 0)
+            //    //    MessageBox.Show("Bạn chưa điền tài khoản!!!");
+            //    //else if (this.txtMa.Text.Length == 0)
+            //    //    MessageBox.Show("Bạn chưa điền vào ô Mã NV!!!");
+            //    //else if (this.txtMK.Text.Length == 0)
+            //    //    MessageBox.Show("Bạn chưa điền vào ô Mật Khẩu!!!");
+            //    //else if (this)
+            //}
+
         }
-
-        //Exit button
-        private void exit()
-        {
-            DialogResult res;
-            res = MessageBox.Show("Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (res == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            else
-            {
-                this.Show();
-            }
-
-        }
-
-        private void dangnhap_Click()
-        {
-            //if (txtMa.Text.Length == 0 && txtMK.Text.Length == 0)
-            //    MessageBox.Show("Bạn chưa điền tài khoản!!!");
-            //else if (this.txtMa.Text.Length == 0)
-            //    MessageBox.Show("Bạn chưa điền vào ô Mã NV!!!");
-            //else if (this.txtMK.Text.Length == 0)
-            //    MessageBox.Show("Bạn chưa điền vào ô Mật Khẩu!!!");
-            //else if (this)
-        }
-
     }
 }

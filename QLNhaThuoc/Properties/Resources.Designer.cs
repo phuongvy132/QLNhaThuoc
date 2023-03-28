@@ -63,6 +63,26 @@ namespace QLNhaThuoc.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8666595_x_icon {
+            get {
+                object obj = ResourceManager.GetObject("8666595_x_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8666595_x_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("8666595_x_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BQfrOF {
             get {
                 object obj = ResourceManager.GetObject("BQfrOF", resourceCulture);

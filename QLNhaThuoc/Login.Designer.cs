@@ -73,7 +73,7 @@ namespace QLNhaThuoc
             this.txtMa.Location = new System.Drawing.Point(180, 163);
             this.txtMa.Name = "txtMa";
             this.txtMa.Size = new System.Drawing.Size(435, 32);
-            this.txtMa.TabIndex = 8;
+            this.txtMa.TabIndex = 0;
             // 
             // txtMK
             // 
@@ -86,7 +86,7 @@ namespace QLNhaThuoc
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtMK.Properties.UseSystemPasswordChar = true;
             this.txtMK.Size = new System.Drawing.Size(435, 30);
-            this.txtMK.TabIndex = 7;
+            this.txtMK.TabIndex = 1;
             this.txtMK.Tag = "hide";
             this.txtMK.ButtonPressed += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtMK_ButtonPressed);
             // 
@@ -98,7 +98,7 @@ namespace QLNhaThuoc
             this.btnĐN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnĐN.Name = "btnĐN";
             this.btnĐN.Size = new System.Drawing.Size(148, 52);
-            this.btnĐN.TabIndex = 5;
+            this.btnĐN.TabIndex = 2;
             this.btnĐN.Text = "Login";
             this.btnĐN.UseVisualStyleBackColor = false;
             this.btnĐN.Click += new System.EventHandler(this.btnĐN_Click_1);
@@ -145,7 +145,7 @@ namespace QLNhaThuoc
             this.imageCollection1.Images.SetKeyName(0, "show_16x16.png");
             this.imageCollection1.Images.SetKeyName(1, "hide_16x16.png");
             // 
-            // QLNhaThuoc
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,7 +154,7 @@ namespace QLNhaThuoc
             this.ClientSize = new System.Drawing.Size(1034, 579);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "QLNhaThuoc";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLNhaThuoc";
             this.Load += new System.EventHandler(this.QLNhaThuoc_Load);
