@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace QLNhaThuoc
 {
-    public partial class CustomersForm1 : DevExpress.XtraEditors.XtraForm
+    public partial class Kho : DevExpress.XtraEditors.XtraForm
     {
-        public CustomersForm1()
+        public Kho()
         {
             InitializeComponent();
         }

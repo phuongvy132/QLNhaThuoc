@@ -202,7 +202,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(389, 173);
+            this.txtSearch.Location = new System.Drawing.Point(768, 175);
             this.txtSearch.MenuManager = this.ribbonControl;
             this.txtSearch.Name = "txtSearch";
             editorButtonImageOptions1.Image = global::QLNhaThuoc.Properties.Resources._8666595_x_icon__1_;
@@ -221,7 +221,7 @@
             // textEdit1
             // 
             this.textEdit1.EditValue = "Tìm kiếm khách hàng";
-            this.textEdit1.Location = new System.Drawing.Point(389, 109);
+            this.textEdit1.Location = new System.Drawing.Point(768, 111);
             this.textEdit1.MenuManager = this.ribbonControl;
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Gainsboro;
