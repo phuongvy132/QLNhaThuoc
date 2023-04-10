@@ -37,7 +37,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLNhaThuocDataSet = new QLNhaThuoc.QLNhaThuocDataSet();
+            this.qLNhaThuocDataSet = new global::QLNhaThuoc.QLNhaThuocDataSet();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnSearch = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
@@ -50,7 +50,7 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
-            this.khachHangTableAdapter = new QLNhaThuoc.QLNhaThuocDataSetTableAdapters.KhachHangTableAdapter();
+            this.khachHangTableAdapter = new global::QLNhaThuoc.QLNhaThuocDataSetTableAdapters.KhachHangTableAdapter();
             this.txtSearch = new DevExpress.XtraEditors.ButtonEdit();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();

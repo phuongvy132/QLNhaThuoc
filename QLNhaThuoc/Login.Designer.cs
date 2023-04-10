@@ -39,13 +39,17 @@ namespace QLNhaThuoc
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtMa = new System.Windows.Forms.TextBox();
-            this.txtMK = new DevExpress.XtraEditors.ButtonEdit();
             this.btnĐN = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtMK = new DevExpress.XtraEditors.ButtonEdit();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMK.Properties)).BeginInit();
@@ -55,7 +59,6 @@ namespace QLNhaThuoc
             // panel1
             // 
             this.panel1.Controls.Add(this.txtMa);
-            this.panel1.Controls.Add(this.txtMK);
             this.panel1.Controls.Add(this.btnĐN);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -139,6 +142,22 @@ namespace QLNhaThuoc
             this.label1.TabIndex = 0;
             this.label1.Text = "LOGIN";
             // 
+            // txtMK
+            // 
+            this.txtMK.Location = new System.Drawing.Point(180, 222);
+            this.txtMK.Name = "txtMK";
+            this.txtMK.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtMK.Properties.Appearance.Options.UseFont = true;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.txtMK.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.txtMK.Properties.UseSystemPasswordChar = true;
+            this.txtMK.Size = new System.Drawing.Size(435, 30);
+            this.txtMK.TabIndex = 1;
+            this.txtMK.Tag = "hide";
+            this.txtMK.ButtonPressed += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtMK_ButtonPressed);
+            // 
             // imageCollection1
             // 
             this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
@@ -177,5 +196,6 @@ namespace QLNhaThuoc
         private DevExpress.XtraEditors.ButtonEdit txtMK;
         private TextBox txtMa;
         private DevExpress.Utils.ImageCollection imageCollection1;
+        private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
     }
 }

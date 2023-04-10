@@ -17,20 +17,5 @@ namespace QLNhaThuoc
         {
             InitializeComponent();
         }
-
-        private void dateEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-            DateTime aDateTime = DateTime.Now;
-            Console.WriteLine("Now is " + aDateTime);
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-            DateTime dt = DateTime.Now;
-            //Console.WriteLine(aDateTime);
-            textBox1.Text = String.Format("{0:MM/dd/yyyy}", dt);
-
-        }
     }
 }
