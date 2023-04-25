@@ -60,7 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customer_DTO.cs" />
+    <Compile Include="DuocPham_DTO.cs" />
+    <Compile Include="HoaDon_DTO.cs" />
     <Compile Include="Login_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

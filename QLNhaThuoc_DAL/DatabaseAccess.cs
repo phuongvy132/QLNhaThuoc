@@ -18,6 +18,7 @@ namespace QLNhaThuoc_DAL
             return conn;
         }
     }
+
     public class DatabaseAccess
     {
         public static string CheckLogin_DTO(Login_DTO login)

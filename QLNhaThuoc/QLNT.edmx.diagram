@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e328b3e565684c89b26b8d9f54b45645" Name="Diagram1">
+        <EntityTypeShape EntityType="QLNhaThuocModel1.CTHDNhap" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaThuocModel1.CTHDXuat" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaThuocModel1.HoaDon" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaThuocModel1.KhachHang" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaThuocModel1.NhaCungCap" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaThuocModel1.NhanVien" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaThuocModel1.NhomThuoc" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaThuocModel1.sysdiagrams" Width="1.5" PointX="5.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaThuocModel1.Thuoc" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaThuocModel1.Login" Width="1.5" PointX="7.75" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="QLNhaThuocModel1.FK_CTHDNhap_HoaDon" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaThuocModel1.FK_CTHDNhap_Thuoc" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaThuocModel1.FK_CTHDXuat_HoaDon" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaThuocModel1.FK_CTHDXuat_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaThuocModel1.FK_CTHDXuat_Thuoc" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaThuocModel1.FK_HoaDon_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaThuocModel1.FK_Thuoc_NhaCungCap" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaThuocModel1.FK_Thuoc_NhomThuoc" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

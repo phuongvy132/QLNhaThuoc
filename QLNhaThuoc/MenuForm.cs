@@ -43,7 +43,7 @@ namespace QLNhaThuoc
         private void btnKH_Click(object sender, EventArgs e)
         {
             //chuyển sang page tiếp theo
-            CustomersForm form = new CustomersForm();
+            DuocPham form = new DuocPham();
             form.ShowDialog();
             this.Hide();
 
@@ -65,6 +65,12 @@ namespace QLNhaThuoc
         }
         private void btnKH_Click_1(object sender, EventArgs e)
         {
+            DuocPham customer = new DuocPham();
+            customer.TopLevel = false;
+            pnlFormLoader.Controls.Add(customer);
+            customer.BringToFront();
+            customer.Show();
+
             pnlNav.Height = btnKH.Height;
             pnlNav.Top = btnKH.Top;
             pnlNav.Left = btnKH.Left;

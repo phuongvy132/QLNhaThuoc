@@ -60,7 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customer_BUS.cs" />
+    <Compile Include="DuocPham_BUS.cs" />
+    <Compile Include="HoaDon_BUS.cs" />
     <Compile Include="Login_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -73,10 +74,6 @@
       <Project>{0f530efb-3d11-4abe-b12c-1805e0d1aeb7}</Project>
       <Name>QLNhaThuoc_DTO</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

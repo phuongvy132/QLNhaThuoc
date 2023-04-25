@@ -36,7 +36,6 @@ namespace QLNhaThuoc_DAL
         public virtual ICollection<CTHDNhap> CTHDNhap { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHDXuat> CTHDXuat { get; set; }
-        public virtual NhaCungCap NhaCungCap { get; set; }
         public virtual NhomThuoc NhomThuoc { get; set; }
     }
 }

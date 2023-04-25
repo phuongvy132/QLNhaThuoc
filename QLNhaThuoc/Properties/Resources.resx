@@ -139,8 +139,8 @@
   <data name="sign-error-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sign-error-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="23926789_2106.i039.012.F.m004.c9.modern pharmacy store isometric set" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\23926789_2106.i039.012.F.m004.c9.modern pharmacy store isometric set.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="medical-staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medical-staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="8666595_x_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8666595_x_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,6 +154,9 @@
   <data name="833432" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\833432.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="23926789_2106.i039.012.F.m004.c9.modern pharmacy store isometric set" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\23926789_2106.i039.012.F.m004.c9.modern pharmacy store isometric set.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="8666595_x_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8666595_x_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,7 +166,7 @@
   <data name="mc-red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mc-red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="medical-staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\medical-staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pencil (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pencil (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

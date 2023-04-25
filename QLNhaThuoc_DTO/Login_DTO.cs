@@ -11,5 +11,14 @@ namespace QLNhaThuoc_DTO
         public string username { get; set; }
         public string password { get; set; }
 
+        public Login_DTO() { }
+
+        public Login_DTO(string username, string password)
+        {
+            this.username = username;
+            this.password = password;
+        }
+
     }
+
 }

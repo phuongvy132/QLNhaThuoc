@@ -25,7 +25,6 @@ namespace QLNhaThuoc_DAL
         public System.DateTime ThoiGian { get; set; }
     
         public virtual HoaDon HoaDon { get; set; }
-        public virtual KhachHang KhachHang { get; set; }
         public virtual Thuoc Thuoc { get; set; }
     }
 }

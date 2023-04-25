@@ -2,6 +2,7 @@
 using DevExpress.Skins;
 using DevExpress.UserSkins;
 using DevExpress.Utils;
+using QLNhaThuoc_DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace QLNhaThuoc
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuForm());
+            Application.Run(new HoaDon());
         }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]

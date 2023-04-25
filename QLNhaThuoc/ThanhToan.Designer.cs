@@ -44,13 +44,16 @@
             this.bt0 = new System.Windows.Forms.Button();
             this.btQR = new System.Windows.Forms.Button();
             this.btXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtThoiTien = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtTongTien
             // 
             this.txtTongTien.Font = new System.Drawing.Font("Tahoma", 20F);
             this.txtTongTien.ForeColor = System.Drawing.Color.Red;
-            this.txtTongTien.Location = new System.Drawing.Point(354, 135);
+            this.txtTongTien.Location = new System.Drawing.Point(347, 98);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new System.Drawing.Size(489, 56);
             this.txtTongTien.TabIndex = 0;
@@ -58,10 +61,11 @@
             // txtTraTien
             // 
             this.txtTraTien.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.txtTraTien.Location = new System.Drawing.Point(354, 206);
+            this.txtTraTien.Location = new System.Drawing.Point(347, 160);
             this.txtTraTien.Name = "txtTraTien";
             this.txtTraTien.Size = new System.Drawing.Size(489, 56);
             this.txtTraTien.TabIndex = 0;
+            this.txtTraTien.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTraTien_KeyDown);
             // 
             // bt1
             // 
@@ -190,9 +194,9 @@
             this.btQR.BackColor = System.Drawing.Color.Blue;
             this.btQR.Font = new System.Drawing.Font("Tahoma", 20F);
             this.btQR.ForeColor = System.Drawing.Color.Yellow;
-            this.btQR.Location = new System.Drawing.Point(807, 12);
+            this.btQR.Location = new System.Drawing.Point(837, 12);
             this.btQR.Name = "btQR";
-            this.btQR.Size = new System.Drawing.Size(330, 96);
+            this.btQR.Size = new System.Drawing.Size(309, 66);
             this.btQR.TabIndex = 1;
             this.btQR.Text = "Thanh Toán QR";
             this.btQR.UseVisualStyleBackColor = false;
@@ -209,6 +213,35 @@
             this.btXoa.TabIndex = 2;
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.label1.Location = new System.Drawing.Point(127, 163);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(204, 48);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Nhận tiền:";
+            // 
+            // txtThoiTien
+            // 
+            this.txtThoiTien.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.txtThoiTien.Location = new System.Drawing.Point(347, 222);
+            this.txtThoiTien.Name = "txtThoiTien";
+            this.txtThoiTien.Size = new System.Drawing.Size(489, 56);
+            this.txtThoiTien.TabIndex = 0;
+            this.txtThoiTien.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTraTien_KeyDown);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.label2.Location = new System.Drawing.Point(127, 225);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(188, 48);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Thối tiền:";
+            // 
             // ThanhToan
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -216,6 +249,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1167, 719);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.btQR);
             this.Controls.Add(this.bt0);
@@ -229,6 +264,7 @@
             this.Controls.Add(this.bt3);
             this.Controls.Add(this.bt4);
             this.Controls.Add(this.bt1);
+            this.Controls.Add(this.txtThoiTien);
             this.Controls.Add(this.txtTraTien);
             this.Controls.Add(this.txtTongTien);
             this.Name = "ThanhToan";
@@ -256,5 +292,8 @@
         private System.Windows.Forms.Button bt0;
         private System.Windows.Forms.Button btQR;
         private DevExpress.XtraEditors.SimpleButton btXoa;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtThoiTien;
+        private System.Windows.Forms.Label label2;
     }
 }

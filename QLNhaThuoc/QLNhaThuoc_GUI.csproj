@@ -78,6 +78,9 @@
     <Reference Include="MaterialSkin">
       <HintPath>C:\Users\nguye\.nuget\packages\materialskin.2\2.3.1\lib\net45\MaterialSkin.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.FakeDb, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.FakeDb.2.0.1\lib\net471\Sitecore.FakeDb.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -92,23 +95,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerForm1.cs">
+    <Compile Include="CTHDNhap.cs">
+      <DependentUpon>QLNT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTHDXuat.cs">
+      <DependentUpon>QLNT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllKH_Result.cs">
+      <DependentUpon>QLNT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDon.cs">
+      <DependentUpon>QLNT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Hóa Đơn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerForm1.Designer.cs">
-      <DependentUpon>CustomerForm1.cs</DependentUpon>
+    <Compile Include="Hóa Đơn.Designer.cs">
+      <DependentUpon>Hóa Đơn.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomersForm.cs">
+    <Compile Include="KhachHang.cs">
+      <DependentUpon>QLNT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dược phẩm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomersForm.Designer.cs">
-      <DependentUpon>CustomersForm.cs</DependentUpon>
+    <Compile Include="Dược phẩm.Designer.cs">
+      <DependentUpon>Dược phẩm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+      <DependentUpon>QLNT.tt</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -116,23 +131,55 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kho.cs">
+    <Compile Include="NhaCungCap.cs">
+      <DependentUpon>QLNT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>QLNT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhomThuoc.cs">
+      <DependentUpon>QLNT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_login_Result.cs">
+      <DependentUpon>QLNT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLNhaThuocDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNhaThuocDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLNT.Context.cs">
+      <DependentUpon>QLNT.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="QLNT.cs">
+      <DependentUpon>QLNT.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="QLNT.Designer.cs">
+      <DependentUpon>QLNT.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>QLNT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>QLNT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>QLNT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Thuoc.cs">
+      <DependentUpon>QLNT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Trang chủ.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Kho.Designer.cs">
-      <DependentUpon>Kho.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Kết ca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Kết ca.Designer.cs">
-      <DependentUpon>Kết ca.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Đầu ca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Đầu ca.Designer.cs">
-      <DependentUpon>Đầu ca.cs</DependentUpon>
+    <Compile Include="Trang chủ.Designer.cs">
+      <DependentUpon>Trang chủ.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -142,37 +189,23 @@
     <Compile Include="MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLNhaThuocDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLNhaThuocDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ThanhToan.Designer.cs">
       <DependentUpon>ThanhToan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CustomerForm1.resx">
-      <DependentUpon>CustomerForm1.cs</DependentUpon>
+    <EmbeddedResource Include="Dược phẩm.resx">
+      <DependentUpon>Dược phẩm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomersForm.resx">
-      <DependentUpon>CustomersForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Hóa Đơn.resx">
+      <DependentUpon>Hóa Đơn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Kho.resx">
-      <DependentUpon>Kho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Kết ca.resx">
-      <DependentUpon>Kết ca.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Đầu ca.resx">
-      <DependentUpon>Đầu ca.cs</DependentUpon>
+    <EmbeddedResource Include="Trang chủ.resx">
+      <DependentUpon>Trang chủ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
@@ -202,6 +235,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BQfrOF.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="QLNT.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLNT.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="QLNhaThuocDataSet.xsc">
       <DependentUpon>QLNhaThuocDataSet.xsd</DependentUpon>
     </None>
@@ -213,11 +255,9 @@
     <None Include="QLNhaThuocDataSet.xss">
       <DependentUpon>QLNhaThuocDataSet.xsd</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\BQfrOF.jpg" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="QLNT.edmx.diagram">
+      <DependentUpon>QLNT.edmx</DependentUpon>
+    </None>
     <None Include="Resources\8666595_x_icon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -264,9 +304,23 @@
     <None Include="Resources\Project_155-10.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="QLNT.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLNT.edmx</DependentUpon>
+      <LastGenOutput>QLNT.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QLNT.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLNT.edmx</DependentUpon>
+      <LastGenOutput>QLNT.cs</LastGenOutput>
+    </Content>
     <Content Include="Resources\23926789_2106.i039.012.F.m004.c9.modern pharmacy store isometric set.jpg" />
     <Content Include="Resources\833432.jpg" />
+    <None Include="Resources\pencil %282%29.png" />
     <None Include="Resources\medical-staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

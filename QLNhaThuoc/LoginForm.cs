@@ -28,6 +28,7 @@ namespace QLNhaThuoc
         private void QLNhaThuoc_Load(object sender, EventArgs e)
         {
             CBShowHide.Checked = true;
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
