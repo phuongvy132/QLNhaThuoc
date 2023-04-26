@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace QLNhaThuoc
         private void DuocPham_Load(object sender, EventArgs e)
         {
             ShowData();
+ 
         }
         void ShowData()
         {
@@ -120,11 +122,6 @@ namespace QLNhaThuoc
             txtMaThuoc.Text = dgvThuoc.Rows[i].Cells[0].Value.ToString();
             dtHSD.Text = dgvThuoc.Rows[i].Cells[4].Value.ToString(); 
             txtGia.Text = dgvThuoc.Rows[i].Cells[3].Value.ToString();
-
-            //Sửa thông tin khách hàng
-            if (e.ColumnIndex == 5)
-            {
-            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -160,8 +157,6 @@ namespace QLNhaThuoc
 
         }
 
-
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -193,6 +188,39 @@ namespace QLNhaThuoc
         private void dgvThuoc_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             dtHSD.Value = Convert.ToDateTime(dgvThuoc.Rows[e.RowIndex].Cells[5].Value);
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        //private DataTable search()
+        //{
+        //    string query = "SELECT TenThuoc, MaThuoc  FROM Thuoc";
+        //    query += "WHERE TenThuoc Like '%' + @parm1 + '%'";
+        //    query += "WHERE MaThuoc Like '%' + @parm1 + '%'";
+        //    string con = @"Provider =Microsoft.ACE.OLEDB.12.0; Data Source=DESKTOP-QQPQ8EC;Initial Catalog=QLNhaThuoc;Integrated Security=True";
+        //    using (OleDbConnection conn = new OleDbConnection(con))
+
+        //    {
+        //        using (OleDbCommand cmd = new OleDbCommand(query,conn))
+        //        {
+        //            cmd.Parameters.AddWithValue("parm1", txtTimKiem.Text);
+        //            using(OleDbDataAdapter da = new OleDbDataAdapter())
+        //            {
+        //                DataTable dt = new DataTable();
+        //                da.Fill(dt);
+        //                dgvThuoc.DataSource = dt;
+        //                return (dt);
+        //            }
+        //        }    
+        //    }
+        //}
+
+        private void txtTimKiem_KeyUp(object sender, KeyEventArgs e)
+        {
+            //search();
+
         }
     }
 }

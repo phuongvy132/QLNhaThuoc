@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using QLNhaThuoc_BUS;
 using QLNhaThuoc_DTO;
 using System.Diagnostics;
+using static DevExpress.Utils.Drawing.Helpers.NativeMethods;
 
 namespace QLNhaThuoc
 {
@@ -22,22 +23,33 @@ namespace QLNhaThuoc
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-QQPQ8EC;Initial Catalog=QLNhaThuoc;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(Properties.Settings.Default.QLNhaThuocConnectionString);
         DataTable dtHD = new DataTable();
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
         HoaDon_BUS hdBUS = new HoaDon_BUS();
-        HoaDon_DTO hdTO = new HoaDon_DTO();
+        HoaDon_DTO hdDTO = new HoaDon_DTO();
+        DuocPham_BUS dpBUS = new DuocPham_BUS();
 
 
         private void Hóa_Đơn_Load(object sender, EventArgs e)
         {
             cbTenThuoc.Items.Clear();
-            ShowData();
+            conn.Open();
+            cmd = conn.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = @"SELECT TenThuoc 
+	                            FROM Thuoc
+                                ORDER BY TenThuoc ASC";
+
+            cmd.ExecuteNonQuery();
+            DataTable dtHD = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             foreach (DataRow dr in dtHD.Rows)
             {
                 cbTenThuoc.Items.Add(dr["TenThuoc"].ToString());
             }
+            da.Fill(dtHD);
             conn.Close();
 
             LoadBillNo();
@@ -46,15 +58,111 @@ namespace QLNhaThuoc
         void ShowData()
         {
             dgv.AutoGenerateColumns = false;
-            hdBUS.getHD();
+            //dtHD = hdBUS.getHD();
             dgv.DataSource = dtHD;
             conn.Close();
+        }
+        private void LoadTenThuoc()
+        {
+            DuocPham_BUS dpBUS = new DuocPham_BUS();
+            cbTenThuoc.DataSource = dpBUS.getDP();
+            cbTenThuoc.DisplayMember = "TenThuoc";
+            cbTenThuoc.ValueMember = "MaThuoc";
+        }
+        private void addData(HoaDon_DTO hdDTO)
+        {
+            hdDTO.MaHD = txtBillNo.Text.Trim();
+            hdDTO.TenThuoc = cbTenThuoc.SelectedValue.ToString();
+            hdDTO.Gia = txtGia.Text.Trim();
+            hdDTO.ThoiGian = dtBillDate.Text.Trim();
+        }
+
+        private bool checktrung(string mahh)
+        {
+            for (int i = 0; i < dtHD.Rows.Count; i++)
+                if (dtHD.Rows[i][1].ToString() == mahh)
+                    return true;
+            return false;
+        }
+        private void capnhatSL(string mahh, int sl)
+        {
+            for (int i = 0; i < dtHD.Rows.Count; i++)
+                if (dtHD.Rows[i][1].ToString() == mahh)
+                {
+                    int soluong = int.Parse(dtHD.Rows[i][3].ToString()) + sl;
+                    dtHD.Rows[i][3] = soluong;
+                    double dongia = double.Parse(dtHD.Rows[i][2].ToString());
+                    dtHD.Rows[i][4] = (dongia * soluong).ToString();
+                    break;
+                }
+        }
+        private bool kiemtraSL(string mahh, int sl)
+        {
+            DataTable dt = new DataTable();
+            dt = dpBUS.getDP("Where MaThuoc = '" + cbTenThuoc.SelectedValue.ToString() + "' and SoLuong>= " + sl);
+            if (dt.Rows.Count > 0)
+                return true;
+            return false;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            HoaDon_DTO hdDTO = new HoaDon_DTO();
+            hdDTO.TongTienHD = txtTongTien.Text;
+            hdDTO.TenThuoc = cbTenThuoc.Text;
+            hdDTO.ThoiGian = dtBillDate.Text;
+
+            SqlCommand cmd1 = new SqlCommand("SELECT * FROM HoaDon WHERE TenThuoc = @parm1", conn);
+            cmd1.Parameters.AddWithValue("parm1", cbTenThuoc.Text);
+            SqlDataReader reader1;
+
+            conn.Open();
+            reader1 = cmd1.ExecuteReader();
+
+            if (reader1.Read())
+            {
+                MessageBox.Show("Mã thuốc đã tồn tại trên hệ thống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                conn.Close();
+                hdBUS.AddData(hdDTO);
+
+                string SQL = string.Format(@"Insert into HoaDon (ThanhTien, TenThuoc, TongTienHD, SoLuong, ThoiGian) 
+                                                    values 
+                                                   (N'" + txtThanhTien.Text +
+                                                   "',N'" + cbTenThuoc.Text +
+                                                   "',N'" + txtTongTien.Text +
+                                                   "',N'" + txtSL.Text +
+                                                   "',CONVERT(DATE,'" + dtBillDate.Text + "',103))");
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(SQL, conn);
+                    cmd1.Parameters.AddWithValue("ThanhTien", txtThanhTien.Text.Trim());
+                    //cmd1.Parameters.AddWithValue("MaNhom", cbMaNhom.Text);
+                    cmd1.Parameters.AddWithValue("TenThuoc", cbTenThuoc.Text.Trim());
+                    cmd1.Parameters.AddWithValue("TongTien", txtTongTien.Text.Trim());
+                    cmd1.Parameters.AddWithValue("SoLuong", txtSL.Text.Trim());
+                    cmd1.Parameters.AddWithValue("ThoiGian", dtBillDate.Value.ToString("dd/MM/yyyy"));
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Thêm Thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            conn.Close();
+            ShowData();
+
         }
 
         public void LoadBillNo()
         {
             int a;
-            string str = (Properties.Settings.Default.QLNhaThuocConnectionString);
+            string str = ("Data Source=DESKTOP-QQPQ8EC;Initial Catalog=QLNhaThuoc;Integrated Security=True");
             conn = new SqlConnection(str);
             conn.Open();
 
@@ -81,66 +189,52 @@ namespace QLNhaThuoc
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            //int gia = Convert.ToInt32(txtGia.Text);
-            //int sl = Convert.ToInt32(txtSL.Text);
-            //int Kq = gia * sl;
-            //txtThanhTien.Text = Kq.ToString();
+            LoadTenThuoc();
+            dgv.Columns.Clear();
+            dtHD.Rows.Clear();
+            dtHD.Columns.Clear();
+            dtHD.Columns.Add("MaHD");
+            dtHD.Columns.Add("HangHoa");
+            dtHD.Columns.Add("DonGia");
+            dtHD.Columns.Add("SoLuong");
+            dtHD.Columns.Add("ThanhTien");
 
-            if (cbTenThuoc.Text == "")
-                MessageBox.Show("Cần điền tên thuốc!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (txtGia.Text == "")
-                MessageBox.Show("Cần điền giá thuốc!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (txtSL.Text == "")
-                MessageBox.Show("Cần điền số lượng thuốc!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-            {
-                if (txtDelUpdate.Text == "")
-                {
-                    dgv.Rows.Add();
-                    int row = dgv.RowCount - 1;
-                    dgv["TenThuoc", row].Value = cbTenThuoc.Text;
-                    dgv["Gia", row].Value = txtGia.Text;
-                    dgv["SoLuong", row].Value = txtSL.Text;
-                    dgv["ThanhTien", row].Value = txtThanhTien.Text;
-                    dgv["MaHD", row].Value = txtBillNo.Text;
-
-                    //string SQL = string.Format(@"SELECT TenThuoc 
-	                   //                         FROM Thuoc
-                    //                            ORDER BY TenThuoc ASC");
-
-                    //SqlCommand cmd = new SqlCommand(SQL, conn);
-                    //cmd.Parameters.AddWithValue("TenThuoc", cbTenThuoc.Text.Trim());
-                    //cmd.Parameters.AddWithValue("GiaBan", txtGia.Text.Trim());
-                    //cmd.Parameters.AddWithValue("SoLuong", txtSL.Text.Trim());
-                    //cmd.Parameters.AddWithValue("ThanhTien", txtThanhTien.Text);
-
-                    dgv.Refresh();
-                    cbTenThuoc.Focus();
-
-                    if (dgv.Rows.Count > 0)
-                    {
-                        dgv.CurrentCell = dgv.Rows[dgv.Rows.Count - 1].Cells[1];
-                    }
-                }
-                else
-                {
-                    //update rows from GV textbox ̃and affter edit txt to GV
-                    int i;
-                    i = Convert.ToInt32(txtDelUpdate.Text);
-                    DataGridViewRow vrow = dgv.Rows[i - 1];
-                    vrow.Cells[1].Value = cbTenThuoc.Text;
-                    vrow.Cells[2].Value = txtGia.Text;
-                    vrow.Cells[3].Value = txtSL.Text;
-                    vrow.Cells[4].Value = txtThanhTien.Text;
-
-                    btnThem.Text = "Thêm";
-                }
-            }
         }
 
         private void dgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             this.dgv.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            DialogResult dialogResult = MessageBox.Show("Bạn chắc chắc muốn xóa?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            try
+            {
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string SQL = string.Format("DELETE FROM HoaDon WHERE TenThuoc = N'" + cbTenThuoc.Text + "'");
+
+                    //Command(mặc định command type = text nên chúng ta khỏi fải làm gì nhiều).
+                    SqlCommand cmd = new SqlCommand(SQL, conn);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    ShowData();
+                }
+                else
+                {
+                    conn.Close();
+                    ShowData();
+                }
+                Hóa_Đơn_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            conn.Close();
+            ShowData();
         }
     }
 }

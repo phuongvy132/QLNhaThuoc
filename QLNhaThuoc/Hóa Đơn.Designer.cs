@@ -59,8 +59,6 @@
             this.BillNo = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.kryptonLabel7 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.txtTongTien = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.btnLuu = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
@@ -129,7 +127,7 @@
             // kryptonLabel1
             // 
             this.kryptonLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.kryptonLabel1.Location = new System.Drawing.Point(77, 3);
+            this.kryptonLabel1.Location = new System.Drawing.Point(76, 3);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(104, 32);
             this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,7 +203,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tableLayoutPanel1.Controls.Add(this.kryptonLabel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.kryptonLabel3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.kryptonLabel4, 2, 0);
@@ -230,7 +228,7 @@
             // kryptonLabel3
             // 
             this.kryptonLabel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.kryptonLabel3.Location = new System.Drawing.Point(314, 3);
+            this.kryptonLabel3.Location = new System.Drawing.Point(312, 3);
             this.kryptonLabel3.Name = "kryptonLabel3";
             this.kryptonLabel3.Size = new System.Drawing.Size(85, 32);
             this.kryptonLabel3.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,7 +238,7 @@
             // kryptonLabel4
             // 
             this.kryptonLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.kryptonLabel4.Location = new System.Drawing.Point(479, 3);
+            this.kryptonLabel4.Location = new System.Drawing.Point(477, 3);
             this.kryptonLabel4.Name = "kryptonLabel4";
             this.kryptonLabel4.Size = new System.Drawing.Size(95, 32);
             this.kryptonLabel4.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -251,9 +249,9 @@
             // 
             this.txtGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGia.Location = new System.Drawing.Point(261, 45);
+            this.txtGia.Location = new System.Drawing.Point(260, 45);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(191, 37);
+            this.txtGia.Size = new System.Drawing.Size(190, 37);
             this.txtGia.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.txtGia.StateCommon.Border.ColorAngle = 45F;
             this.txtGia.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -267,7 +265,7 @@
             // kryptonLabel5
             // 
             this.kryptonLabel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.kryptonLabel5.Location = new System.Drawing.Point(635, 3);
+            this.kryptonLabel5.Location = new System.Drawing.Point(633, 3);
             this.kryptonLabel5.Name = "kryptonLabel5";
             this.kryptonLabel5.Size = new System.Drawing.Size(109, 32);
             this.kryptonLabel5.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -281,7 +279,7 @@
             this.cbTenThuoc.DropDownWidth = 260;
             this.cbTenThuoc.Location = new System.Drawing.Point(3, 45);
             this.cbTenThuoc.Name = "cbTenThuoc";
-            this.cbTenThuoc.Size = new System.Drawing.Size(252, 35);
+            this.cbTenThuoc.Size = new System.Drawing.Size(251, 35);
             this.cbTenThuoc.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -293,7 +291,7 @@
             // 
             this.txtSL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSL.Location = new System.Drawing.Point(458, 45);
+            this.txtSL.Location = new System.Drawing.Point(456, 45);
             this.txtSL.Name = "txtSL";
             this.txtSL.Size = new System.Drawing.Size(138, 37);
             this.txtSL.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
@@ -310,7 +308,7 @@
             // 
             this.txtThanhTien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtThanhTien.Location = new System.Drawing.Point(602, 45);
+            this.txtThanhTien.Location = new System.Drawing.Point(600, 45);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Size = new System.Drawing.Size(176, 37);
             this.txtThanhTien.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
@@ -327,7 +325,7 @@
             // 
             this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThem.Location = new System.Drawing.Point(784, 45);
+            this.btnThem.Location = new System.Drawing.Point(782, 45);
             this.btnThem.Name = "btnThem";
             this.btnThem.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.btnThem.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
@@ -383,13 +381,13 @@
             this.btnThem.StateTracking.Border.Width = 1;
             this.btnThem.TabIndex = 30;
             this.btnThem.Values.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            this.btnThem.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.Location = new System.Drawing.Point(992, 45);
+            this.btnXoa.Location = new System.Drawing.Point(990, 45);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.btnXoa.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
@@ -448,7 +446,7 @@
             // 
             // txtDelUpdate
             // 
-            this.txtDelUpdate.Location = new System.Drawing.Point(1091, 45);
+            this.txtDelUpdate.Location = new System.Drawing.Point(1089, 45);
             this.txtDelUpdate.Name = "txtDelUpdate";
             this.txtDelUpdate.Size = new System.Drawing.Size(25, 31);
             this.txtDelUpdate.TabIndex = 31;
@@ -458,7 +456,7 @@
             // 
             this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSua.Location = new System.Drawing.Point(891, 45);
+            this.btnSua.Location = new System.Drawing.Point(889, 45);
             this.btnSua.Name = "btnSua";
             this.btnSua.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.btnSua.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
@@ -569,6 +567,7 @@
             // 
             // SL
             // 
+            this.SL.DataPropertyName = "SoLuong";
             this.SL.HeaderText = "Số lượng";
             this.SL.MinimumWidth = 8;
             this.SL.Name = "SL";
@@ -578,6 +577,7 @@
             // ThanhTien
             // 
             this.ThanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ThanhTien.DataPropertyName = "ThanhTien";
             this.ThanhTien.HeaderText = "Thành tiền";
             this.ThanhTien.MinimumWidth = 8;
             this.ThanhTien.Name = "ThanhTien";
@@ -595,8 +595,8 @@
             // 
             // kryptonLabel7
             // 
-            this.kryptonLabel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.kryptonLabel7.Location = new System.Drawing.Point(816, 536);
+            this.kryptonLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.kryptonLabel7.Location = new System.Drawing.Point(836, 581);
             this.kryptonLabel7.Name = "kryptonLabel7";
             this.kryptonLabel7.Size = new System.Drawing.Size(104, 32);
             this.kryptonLabel7.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -605,9 +605,8 @@
             // 
             // txtTongTien
             // 
-            this.txtTongTien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTongTien.Location = new System.Drawing.Point(940, 536);
+            this.txtTongTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTongTien.Location = new System.Drawing.Point(960, 581);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new System.Drawing.Size(154, 37);
             this.txtTongTien.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
@@ -619,33 +618,6 @@
             this.txtTongTien.StateCommon.Content.Color1 = System.Drawing.Color.Gray;
             this.txtTongTien.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTien.TabIndex = 29;
-            // 
-            // kryptonTextBox1
-            // 
-            this.kryptonTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonTextBox1.Location = new System.Drawing.Point(940, 590);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(154, 37);
-            this.kryptonTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonTextBox1.StateCommon.Border.ColorAngle = 45F;
-            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox1.StateCommon.Border.Rounding = 10;
-            this.kryptonTextBox1.StateCommon.Content.Color1 = System.Drawing.Color.Gray;
-            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonTextBox1.TabIndex = 29;
-            // 
-            // kryptonLabel8
-            // 
-            this.kryptonLabel8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.kryptonLabel8.Location = new System.Drawing.Point(816, 590);
-            this.kryptonLabel8.Name = "kryptonLabel8";
-            this.kryptonLabel8.Size = new System.Drawing.Size(104, 32);
-            this.kryptonLabel8.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel8.TabIndex = 0;
-            this.kryptonLabel8.Values.Text = "Tổng tiền:";
             // 
             // btnLuu
             // 
@@ -715,10 +687,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1128, 639);
             this.Controls.Add(this.dgv);
-            this.Controls.Add(this.kryptonLabel8);
             this.Controls.Add(this.kryptonLabel7);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.kryptonTextBox1);
             this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.btnLuu);
@@ -762,16 +732,14 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgv;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel7;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtTongTien;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel8;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnLuu;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtDelUpdate;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSua;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn SlNo;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn TenThuoc;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn Gia;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn SL;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn ThanhTien;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn BillNo;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSua;
     }
 }

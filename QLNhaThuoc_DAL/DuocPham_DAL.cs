@@ -31,6 +31,25 @@ namespace QLNhaThuoc_DAL
             da.Fill(dtDP);
             return dtDP;
         }
+        public DataTable getDP(string dieukien)
+        {
+
+            DataTable dt = new DataTable();
+            try
+            {
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(@"select * from Thuoc " + dieukien, conn);
+
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                string mex = ex.Message;
+                cmd.Dispose();
+                conn.Close();
+            }
+            return dt;
+        }
 
         public bool themDP(DuocPham_DTO DP)
         {
@@ -43,30 +62,14 @@ namespace QLNhaThuoc_DAL
                                                    "',CONVERT(DATE,'" + DP.HSD + "',103))");
             try
             {
-                ////Command(mặc định command type = text nên chúng ta khỏi fải làm gì nhiều).
-                //SqlCommand cmd1 = new SqlCommand(SQL, conn);
-
-                ////dpBUS.themDP(dpDTO);
-
-                //cmd1.Parameters.AddWithValue("MaThuoc", DP.MaThuoc);
-                ////cmd1.Parameters.AddWithValue("MaNhom", cbMaNhom.Text);
-                //cmd1.Parameters.AddWithValue("TenThuoc", DP.TenThuoc);
-                //cmd1.Parameters.AddWithValue("GiaBan", DP.GiaBan);
-                //cmd1.Parameters.AddWithValue("SoLuong", DP.SoLuong);
-                //cmd1.Parameters.AddWithValue("HSD", DP.HSD);
-
-
                 //if (txtSĐT.Text == "")
                 //    throw new Exception("Cần điền số điện thoại!");
                 conn.Open();
 
                 // Query và kiểm tra
-                // Query và kiểm tra
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
                 conn.Close();
-
-
             }
             catch (Exception ex)
             {
@@ -101,8 +104,11 @@ namespace QLNhaThuoc_DAL
                     return true;
 
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
+                string mex = ex.Message;
+                cmd.Dispose();
+                conn.Close();
 
             }
             finally
@@ -131,9 +137,11 @@ namespace QLNhaThuoc_DAL
                     return true;
 
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-
+                string mex = ex.Message;
+                cmd.Dispose();
+                conn.Close();
             }
             finally
             {

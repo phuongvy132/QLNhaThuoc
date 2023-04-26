@@ -68,6 +68,7 @@
     <Compile Include="CTHDXuat.cs">
       <DependentUpon>QLNT.tt</DependentUpon>
     </Compile>
+    <Compile Include="CTHD_DAL.cs" />
     <Compile Include="DuocPham_DAL.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="GetAllKH_Result.cs">

@@ -22,6 +22,11 @@ namespace QLNhaThuoc_BUS
             return dalDP.getDP();
         }
 
+        public DataTable getDP(string dieukien)
+        {
+            return dalDP.getDP(dieukien);
+        }
+
         public bool themDP(DuocPham_DTO DP)
         {
             return dalDP.themDP(DP);

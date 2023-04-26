@@ -1,0 +1,157 @@
+﻿USE [QLNhaThuoc]
+GO
+
+/****** Object:  Table [dbo].[CTHDXuat]    Script Date: 25/04/2023 6:03:19 CH ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[CTHDXuat](
+	[MaXuat] [int] NOT NULL,
+	[MaHD] [int] NOT NULL,
+	[MaThuoc] [nvarchar](50) NOT NULL,
+	[SoLuong] [int] NOT NULL,
+	[ThanhTien] [money] NOT NULL,
+	[ThoiGian] [date] NOT NULL,
+ CONSTRAINT [PK_CTHDXuat] PRIMARY KEY CLUSTERED 
+(
+	[MaXuat] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+USE [QLNhaThuoc]
+GO
+
+/****** Object:  Table [dbo].[HoaDon]    Script Date: 25/04/2023 6:04:19 CH ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[HoaDon](
+	[MaHD] [int] NOT NULL,
+	[TenThuoc] [bigint] NOT NULL,
+	[ThoiGian] [date] NOT NULL,
+	[TongTienHD] [money] NOT NULL,
+ CONSTRAINT [PK_HoaDon] PRIMARY KEY CLUSTERED 
+(
+	[MaHD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+USE [QLNhaThuoc]
+GO
+
+/****** Object:  Table [dbo].[KhachHang]    Script Date: 25/04/2023 6:04:36 CH ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[KhachHang](
+	[MaKH] [int] IDENTITY(1,1) NOT NULL,
+	[TenKH] [nvarchar](50) NULL,
+	[SĐT] [char](15) NOT NULL,
+	[DiemTichLuy] [char](50) NULL,
+	[GioiTinh] [nvarchar](15) NULL,
+ CONSTRAINT [PK_KhachHang] PRIMARY KEY CLUSTERED 
+(
+	[MaKH] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+USE [QLNhaThuoc]
+GO
+
+/****** Object:  Table [dbo].[Login]    Script Date: 25/04/2023 6:04:48 CH ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Login](
+	[username] [varchar](50) NOT NULL,
+	[password] [varchar](50) NOT NULL
+) ON [PRIMARY]
+GO
+USE [QLNhaThuoc]
+GO
+
+/****** Object:  Table [dbo].[NhanVien]    Script Date: 25/04/2023 6:04:57 CH ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[NhanVien](
+	[MaNV] [int] IDENTITY(1,1) NOT NULL,
+	[TenNV] [nvarchar](50) NULL,
+	[GioiTinh] [int] NULL,
+	[DiaChi] [ntext] NULL,
+	[username] [varchar](50) NULL,
+	[password] [varchar](50) NULL,
+ CONSTRAINT [PK_NhanVien] PRIMARY KEY CLUSTERED 
+(
+	[MaNV] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+USE [QLNhaThuoc]
+GO
+
+/****** Object:  Table [dbo].[NhomThuoc]    Script Date: 25/04/2023 6:05:07 CH ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[NhomThuoc](
+	[MaNhom] [nvarchar](15) NOT NULL,
+	[TenNhom] [nvarchar](50) NULL,
+	[GhiChu] [nvarchar](50) NULL,
+ CONSTRAINT [PK_NhomThuoc] PRIMARY KEY CLUSTERED 
+(
+	[MaNhom] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+USE [QLNhaThuoc]
+GO
+
+/****** Object:  Table [dbo].[Thuoc]    Script Date: 25/04/2023 6:05:29 CH ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Thuoc](
+	[MaThuoc] [nvarchar](50) NOT NULL,
+	[TenThuoc] [nvarchar](50) NOT NULL,
+	[MaNhom] [nvarchar](15) NULL,
+	[SoLuong] [int] NOT NULL,
+	[GiaBan] [int] NOT NULL,
+	[HSD] [date] NOT NULL,
+ CONSTRAINT [PK_Thuoc] PRIMARY KEY CLUSTERED 
+(
+	[MaThuoc] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Thuoc]  WITH CHECK ADD  CONSTRAINT [FK_Thuoc_NhomThuoc] FOREIGN KEY([MaNhom])
+REFERENCES [dbo].[NhomThuoc] ([MaNhom])
+GO
+
+ALTER TABLE [dbo].[Thuoc] CHECK CONSTRAINT [FK_Thuoc_NhomThuoc]
+GO
+
+

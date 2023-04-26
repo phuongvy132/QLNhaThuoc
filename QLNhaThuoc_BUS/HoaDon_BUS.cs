@@ -16,10 +16,19 @@ namespace QLNhaThuoc_BUS
 
         HoaDon_DAL dalHD = new HoaDon_DAL();
 
-        public void getHD()
+        public DataTable GetData()
         {
-            dalHD.getHD();
+            return dalHD.GetData();
         }
+        public bool AddData(HoaDon_DTO HD)
+        {
+            return dalHD.AddData(HD);
+        }
+        public bool DelData(string ma)
+        {
+            return dalHD.DelData(ma);
+        }
+
 
     }
 }

@@ -24,7 +24,7 @@ namespace QLNhaThuoc
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HoaDon());
+            Application.Run(new QLNhaThuoc());
         }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]

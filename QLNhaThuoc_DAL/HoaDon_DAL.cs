@@ -18,7 +18,7 @@ namespace QLNhaThuoc_DAL
         SqlConnection conn = SqlConnectionData.Connect();
         SqlCommand cmd = new SqlCommand();
 
-        public void getHD()
+        public DataTable GetData()
         {
             conn.Open();
             cmd = conn.CreateCommand();
@@ -26,15 +26,70 @@ namespace QLNhaThuoc_DAL
             cmd.CommandText = @"SELECT TenThuoc 
 	                            FROM Thuoc
                                 ORDER BY TenThuoc ASC";
+
             cmd.ExecuteNonQuery();
             DataTable dtHD = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
+            foreach (DataRow dr in dtHD.Rows)
+            {
+                //hd.TenThuoc.Add(dr["TenThuoc"].ToString());
+            }
             da.Fill(dtHD);
+            return dtHD;
         }
 
-        public bool themHD(HoaDon_DTO hd)
+        public bool AddData(HoaDon_DTO HD)
         {
+            string SQL = string.Format("insert into HoaDon (MaHD, ThoiGian, TenThuoc, TongTienHD, ThanhTien) values ('" + HD.MaHD + "', CONVERT (datetime,'" + HD.ThoiGian + "',103),'" + HD.TenThuoc + "','" + HD.TongTienHD + "','" + HD.ThanhTien + "')");
+            try
+            {
+                //if (txtSĐT.Text == "")
+                //    throw new Exception("Cần điền số điện thoại!");
+                conn.Open();
+
+                // Query và kiểm tra
+                if (cmd.ExecuteNonQuery() > 0)
+                    return true;
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                string mex = ex.Message;
+                cmd.Dispose();
+                conn.Close();
+            }
+            finally
+            {
+                conn.Close();
+            }
+
             return false;
         }
+
+        public bool DelData(string ma)
+        {
+            string SQL = string.Format( "Delete HoaDon Where MaHD = '" + ma + "'");
+            try
+            {
+                conn.Open();
+
+                // Query và kiểm tra
+                if (cmd.ExecuteNonQuery() > 0)
+                    return true;
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                string mex = ex.Message;
+                cmd.Dispose();
+                conn.Close();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+
     }
 }
